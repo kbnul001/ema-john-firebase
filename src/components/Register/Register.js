@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
+    const { signinUsingGoogle } = useAuth();
     return (
         <div>
             <div className="login-form">
@@ -15,7 +17,7 @@ const Register = () => {
                     <br />
                     <input type="submit" value="Submit" />
                     <div>-------or-------</div>
-                    <button className="btn-regular">Sign in with Google</button>
+                    <button onClick={signinUsingGoogle} className="btn-regular">Sign in with Google</button>
                     <p>Already a user? <Link to="/login">Sign in</Link></p>
                 </form>
             </div>
